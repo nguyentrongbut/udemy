@@ -1,7 +1,9 @@
 import React from "react";
 import './globals.css';
 import {Metadata} from "next";
-import {manrope, roboto} from "@/components/fonts";
+import {manrope, roboto} from "@/utils";
+import Sidebar from "@/components/layout/Sidebar";
+
 
 export const metadata: Metadata = {
     title: 'Udemy',
@@ -15,7 +17,12 @@ export default function RootLayout
         <body
             className={`${manrope.variable} ${roboto.variable} font-primary`}
         >
-        {children}
+        <div className="wrapper grid grid-cols-[300px_minmax(0,1fr)] h-screen">
+            <Sidebar></Sidebar>
+            <main>
+                {children}
+            </main>
+        </div>
         </body>
         </html>
     );
