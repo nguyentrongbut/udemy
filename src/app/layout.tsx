@@ -3,6 +3,7 @@ import './globals.css';
 import {Metadata} from "next";
 import {manrope, roboto} from "@/utils";
 import {ClerkProvider} from "@clerk/nextjs";
+import {ThemeProvider} from "@/components/common/ThemeProvider";
 
 
 export const metadata: Metadata = {
@@ -18,7 +19,14 @@ export default function RootLayout
             <body
                 className={`${manrope.variable} ${roboto.variable} font-primary`}
             >
-            {children}
+            <ThemeProvider
+                attribute="class"
+                defaultTheme="system"
+                enableSystem
+                disableTransitionOnChange
+            >
+                {children}
+            </ThemeProvider>
             </body>
             </html>
         </ClerkProvider>
