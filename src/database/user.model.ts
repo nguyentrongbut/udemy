@@ -5,9 +5,9 @@ export interface IUser extends Document {
     clerkId: string;
     name: string;
     username: string;
-    email_address: string;
+    email: string;
     avatar: string;
-    createdAt: Date;
+    created_at: Date;
     status: EUserStatus;
     role: EUserRole;
     courses: Schema.Types.ObjectId[];
@@ -16,11 +16,11 @@ export interface IUser extends Document {
 const userSchema = new Schema<IUser>({
     clerkId: {type: String},
     name: {type: String},
-    username: {type: String},
-    email_address: {type: String},
+    username: {type: String, unique: true, required: true},
+    email: {type: String, unique: true, required: true},
     avatar: {type: String},
     courses: [{type: Schema.Types.ObjectId, ref: "Course"}],
-    createdAt: {type: Date, default: Date.now},
+    created_at: {type: Date, default: Date.now},
     role: {
         type: String,
         enum: Object.values(EUserRole),

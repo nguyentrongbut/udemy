@@ -11,4 +11,13 @@ type TMenuItem = {
     icon?: React.ReactNode;
 };
 
-export type { TActiveLink, TMenuItem }
+// User
+type TCreateUserParams = {
+    clerkId: string,
+    username: string,
+    email_address: string,
+    name?: string,
+    avatar?: string
+}
+
+export type { TActiveLink, TMenuItem, TCreateUserParams }
