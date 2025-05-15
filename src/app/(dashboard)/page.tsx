@@ -9,6 +9,7 @@ export default async function Home () {
         email_address: "cloly@gmail.com",
         username: "cloly",
     })
+    console.log(user)
   return (
     <>
       <Heading>
