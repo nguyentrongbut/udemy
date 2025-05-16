@@ -4,6 +4,8 @@ import {Metadata} from "next";
 import {manrope, roboto} from "@/utils";
 import {ClerkProvider} from "@clerk/nextjs";
 import {ThemeProvider} from "@/components/common/ThemeProvider";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 export const metadata: Metadata = {
@@ -26,6 +28,11 @@ export default function RootLayout
                 disableTransitionOnChange
             >
                 {children}
+                <ToastContainer
+                    autoClose={2000}
+                    className="text-sm font-medium"
+                    position="top-right"
+                ></ToastContainer>
             </ThemeProvider>
             </body>
             </html>

@@ -1,18 +1,16 @@
-import React from "react";
-
-type TActiveLink = {
+export type TActiveLink = {
     url: string;
     children: React.ReactNode;
 }
 
-type TMenuItem = {
+export type TMenuItem = {
     url: string;
     title: string;
     icon?: React.ReactNode;
 };
 
 // User
-type TCreateUserParams = {
+export type TCreateUserParams = {
     clerkId: string,
     username: string,
     email: string,
@@ -20,4 +18,8 @@ type TCreateUserParams = {
     avatar?: string
 }
 
-export type { TActiveLink, TMenuItem, TCreateUserParams }
+// Course
+export type ICreateCourseParams = {
+    title: string,
+    slug: string,
+}
